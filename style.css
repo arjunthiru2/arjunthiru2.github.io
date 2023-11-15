@@ -33,17 +33,18 @@ color: black;
 }
 nav{
     width: 100%;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
-    padding: 10px 1px;
+    padding: 10px 40px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 nav .logo{
-    width: 200px;
-
+    width: 78px;
+    cursor: pointer;
+    
 }
 
 nav .logo::after{
@@ -69,7 +70,7 @@ nav ul li a:hover{
 
 /*about section*/
 #about{
-    padding: 50px;
+    padding: 10px;
     position: left;
     height: 70%;
     color: #ababab;
