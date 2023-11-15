@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TGP</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+<!-- Your existing stylesheets -->
+
+<!-- Bootstrap JavaScript -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    
+    
+</head>
+<body>
+    <div class="hero">
+        <video autoplay loop muted plays-inline class=""back-video>
+            <source src="pics/tgpanimation.mp4" type="video/mp4">
+        </video>
+    <nav> 
+        <img src="pics/tgpwhite.png" class="logo">
+        <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Shop</a></li>   
+            
+        </ul>
+    </nav>
+    </div>
+   <div id="header">
+    <div class="header-text">
+        
+    </div>
+    </div>
+</div>
+<!---------about section------------->
+
+<div id="about">
+    <div class="container">
+            <div class="about-col-2">
+                <h1 class="subtitle">About TGP</h1>
+                <p>Founders: Arjun Thiruchchelvarajah and Chaarm Suhanthan</p>  
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('tgp')">TGP</p>
+                    <p class="tab-links" onclick="opentab('arjun')">Arjun</p>
+                    <p class="tab-links" onclick="opentab('chaarm')">Chaarm</p>
+                </div>
+                <div class="tab-contents active-tab" id="tgp">
+                    <ul>
+                        <li><span>UI?UX</span><br>123</li>
+                        <li><span>UI?UX</span><br>456</li>
+                        <li><span>UI?UX</span><br>789 </li>  
+                    </ul>
+                </div>
+                <div class="tab-contents" id="arjun">
+                    <ul>
+                        <li><span>UI?UX</span><br>789</li>
+                        <li><span>UI?UX</span><br>456</li>
+                        <li><span>UI?UX</span><br>123</li>  
+                    </ul>
+                </div>
+                <div class="tab-contents" id="chaarm">
+                    <ul>
+                        <li><span>UI?UX</span><br>321 </li>
+                        <li><span>UI?UX</span><br>654</li>
+                        <li><span>UI?UX</span><br>987</li>  
+                    </ul>
+                </div> 
+            </div>
+        </div>
+    </div>
+</div>
+<!-- services -->
+<div class="services">
+    <div class="container">
+        <h1 class="subtitle">Our Products</h1>
+        <div class="services-list">
+            <div>
+                <h2>Content</h2>
+                <p>Description</p>
+                <a href="#">Learn more</a>
+            </div>
+            <div>
+                <h2>Video Podcasts</h2>
+                <p>Description</p>
+                <a href="#">Learn more</a>
+            </div>
+            <div>
+                <h2>Audio Podcasts</h2>
+                <p>Description</p>
+                <a href="#">Learn more</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!--------portfolio------->
+<!-- <div id="portfolio">
+    <div class="container">
+        <h1 class="subtitle">My Work</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="pics/"> 
+                <div class="layer">
+                    <h3>Social Media App</h3>
+                    <p>Social Media App Description</p>
+                </div>
+            </div>
+            <div class="work">
+                <img src="pics/"> 
+                <div class="layer">
+                    <h3>Music App</h3>
+                    <p>Music App Description</p>
+                </div>
+            </div>
+            <div class="work">
+                <img src="pics/"> 
+                <div class="layer">
+                    <h3>Online Shopping App</h3>
+                    <p>Online Shopping App Description</p>
+                    <a href="#"></a>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="btn">See More</a>
+    </div>
+</div>  -->
+<!--contact-->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="subtitle">Contact Us</h1>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/thegraduatesproject/" target="blank"></a>
+                    <a href="https://www.tiktok.com/@thegraduatesproject" target="blank"></a>
+                    <a href="https://www.youtube.com/channel/UCtQ_DLyjJuh7cayvgzd6jsQ" target="blank"></a>
+                    <a href="https://ca.linkedin.com/company/the-graduates-project" target="blank"></a>
+                    <a href="https://twitter.com/tgprojectmedia" target="blank"></a>
+                </div>
+            </div>
+            <div class="contact-right">
+                <form>
+                    <input type="text" name="name" placeholder=" Name" required>
+                    <input type="email" name="email" placeholder=" Email" required>
+                    <textarea name="Message" rows="6" placeholder=" Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>Copyright © TGP</p>
+    </div>
+</div>
+
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    function opentab(tabname){
+        for(tablink of tablinks){
+        tablink.classList.remove("active-link");
+    }
+    for(tabcontent of tabcontents){
+        tablink.classList.remove("active-tab");
+    }
+    event.currentTarget.classList.add("active-link")
+    document.getElementById(tabname).classList.add("active-tab") 
+}
+</script>
+
+</body>
+</html>
