@@ -1,6 +1,6 @@
 *{
     margin: 0;
-    padding: 20;
+    padding: 0px;
     font-family: 'Helvetica Neue', sans-serif;
     box-sizing: border-box;
 }
@@ -9,23 +9,22 @@
     width: 100%;
     height: auto;
     position: relative;
-    padding: 10px;
+    padding: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-
-
 }
 
 .back-video{
     position: absolute;
-    right: 0;
     bottom: 0;
     z-index: -1;
 }
 body {
     background: black;
-    color: #fff;}
+    color: #fff;
+    overflow-x: hidden;
+}   
 
 .light-mode{
 background-color: white;
@@ -33,7 +32,9 @@ color: black;
 }
 nav{
     width: 100%;
+    height: 15%;
     position: fixed;
+    background: #080808;
     top: 0;
     left: 0;
     padding: 10px 40px;
@@ -301,10 +302,11 @@ transform: translateY(-10px);
     background-image: url('https://api.iconify.design/skill-icons/twitter.svg');
   }
   
-.social-icons a :hover{
+  .social-icons a:hover {
     color: darkgoldenrod;
     transform: translateY(-5px);
 }
+
 .btn.btn2{
     display: inline-block;
     background: #262626;
@@ -325,15 +327,15 @@ form input, form textarea{
     border: 0;
     outline: none;
     background: #262626;
-    padding: 50px 0;
-    margin: 15px 0;
+    padding: 20px 0;
+    margin: 50px 0;
     color: #fff;
     font-size: 18px;
     font-weight: 500;
     border-radius: 6px;
 }
 form .btn2{
-    padding: 24px 60px;
+    padding: 22px 60px;
     font-size: 18px;
     font-weight: 500;
     margin-top: 20px;
@@ -352,10 +354,12 @@ form .btn2{
     transition: 0.5s;
 }
 
-.form .btn2 div:hover{
+.form .btn2:hover {
     background: darkgoldenrod;
     transform: translateY(-10px);
-    }
+}
+
+
 
 .copyright{
     width: 100%;
