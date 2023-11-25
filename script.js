@@ -1,21 +1,13 @@
-// script.js
-$(document).ready(function() {
-    // Your script code here
-    console.log("Script loaded!");
-});
-
-
-
-var tablinks = document.getElementsByClassName("tab-links");
-var tabcontents = document.getElementsByClassName("tab-contents");
-
-function opentab(tabname) {
-    for (tablink of tablinks) {
-        tablink.classList.remove("active-link");
+function opentab(tabName) {
+    var i;
+    var x = document.getElementsByClassName("tab-contents");
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
     }
-    for (tabcontent of tabcontents) {
-        tabcontent.classList.remove("active-tab");  // Corrected variable name
+    var links = document.getElementsByClassName("tab-links");
+    for (i = 0; i < links.length; i++) {
+        links[i].classList.remove("active-link");
     }
+    document.getElementById(tabName).style.display = "block";
     event.currentTarget.classList.add("active-link");
-    document.getElementById(tabname).classList.add("active-tab");
 }

@@ -1,11 +1,11 @@
-*{
+* {
     margin: 0;
     padding: 0px;
     font-family: 'Helvetica Neue', sans-serif;
     box-sizing: border-box;
 }
 
-.hero{
+.hero {
     width: 100%;
     height: auto;
     position: relative;
@@ -15,26 +15,29 @@
     justify-content: center;
 }
 
-.back-video{
+.back-video {
     position: absolute;
     bottom: 0;
     z-index: -1;
 }
+
 body {
     background: black;
     color: #fff;
     overflow-x: hidden;
-}   
-
-.light-mode{
-background-color: white;
-color: black;
 }
-nav{
+
+.light-mode {
+    background-color: white;
+    color: black;
+}
+
+.navbar {
+    z-index: 1000;
     width: 100%;
     height: 15%;
     position: fixed;
-    background: #080808;
+    background: black;
     top: 0;
     left: 0;
     padding: 10px 40px;
@@ -42,74 +45,89 @@ nav{
     align-items: center;
     justify-content: space-between;
 }
-nav .logo{
+
+nav .logo {
     width: 78px;
     cursor: pointer;
-    
 }
 
-nav .logo::after{
-    
+nav .logo::after {
+    background-color: white;
+    color: black;
 }
 
-nav ul li{
+nav ul li {
     display: inline-block;
-    list-style: none;
-    margin: 40px;
-
+    padding: 40px;
+    
 }
-nav ul li a{
+
+nav ul li a {
     color: #fff;
     text-decoration: none;
     font-size: 18px;
     font-weight: 800;
 }
-nav ul li a:hover{
+
+nav ul li a:hover {
     color: darkgoldenrod;
     transform: translateY(-5px);
 }
 
-/*about section*/
-#about{
+/* about section */
+#about {
     padding: 10px;
-    position: left;
+    position: relative;
     height: 70%;
     color: #ababab;
+    margin-top: 60px; /* Adjusted margin for better spacing */
 }
-.row{
+
+.row {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    
 }
-.about-col-1{
-    flex-basis: 100%;
+
+.about-col-1 {
+    flex-basis: 35%; /* Adjusted column width */
 }
-.about-col-1 img{
+
+.about-col-1 img {
+    padding-right: 80px;
     width: 100%;
-    border-radius: 15px;
 }
-.about-col-2{
-    flex-basis: 100%;
+.founders {
+    font-weight: bold; /* Set the font weight */
+    color: darkgoldenrod; /* Set the text color */
+    padding-left: 120px;
+    white-space: nowrap;
 }
-.subtitle{
+.subtitle {
+    padding-top: 150px;
+    padding-left: 200px;
     font-size: 60px;
     font-weight: 600;
     color: #fff;
-
 }
-.tab-titles{
-    display: flex;
-    margin: 20px 0 40px;
 
+.tab-titles {
+    padding-left: 225px;
+    display: flex;    
 }
-.tab-links{
-    margin-right: 50px ;
+
+.tab-links {
+    margin-right: 60px;
     font-size: 18px;
     font-weight: 500;
     cursor: pointer;
     position: relative;
+    font-weight:bold;
+
 }
-.tab-links::after{
+
+.tab-links::after {
     content: "";
     width: 0;
     height: 3px;
@@ -119,35 +137,58 @@ nav ul li a:hover{
     bottom: -6px;
     transition: 0.5s;
 }
-.tab-links.active-link::after{
-    width: 50%;
+
+.tab-links.active-link::after {
+    width: 100%;
 }
-.tab-contents ul li{
-list-style: none;
-margin: 10px 0;
+
+.tab-contents ul li {
+    list-style: none;
 }
-.tab-contents ul li span{
-    color: #b54769;
-    font-size: 14px;
-}
-.tab-contents{
-    display: none;
-}
-.tab-contents.active-tab{
-    display: block;
-}
-/*services*/
-#services{
-    padding: 50px ;
+    
+.tab-contents ul li span {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    color: whitesmoke;
     
 }
-.services-list{
-    display:grid;
+
+.tab-contents {
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    padding-top: 10px;
+    padding-left: 160px;
+    text-align: center;
+}
+
+.tab-contents.active-tab {
+    display: block;
+}
+
+.tab-contents span {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #333;
+}
+
+/* services */
+#services {
+    padding: 50px;
+    margin-top: 60px; /* Adjusted margin for better spacing */
+}
+
+.services-list {
+    display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-gap: 40px;
     margin-top: 50px;
 }
-.services-list div{
+
+.services-list div {
     background: #262626;
     padding: 50px;
     font-size: 13px;
@@ -155,159 +196,103 @@ margin: 10px 0;
     border-radius: 10px;
     transition: background 0.5s, transform 0.5s;
 }
-.services-list div i{
+
+.services-list div i {
     font-size: 50px;
     margin-bottom: 30px;
-
 }
-.services-list div h2{
-    font-size:30px;
+
+.services-list div h2 {
+    font-size: 30px;
     font-weight: 500;
     margin-bottom: 14px;
 }
-.services-list div a{
+
+.services-list div a {
     text-decoration: none;
     color: #fff;
     font-size: 12px;
     margin-top: 20px;
-    display:inline-block;
+    display: inline-block;
 }
-.services-list div:hover{
-background: darkgoldenrod;
-transform: translateY(-10px);
+
+.services-list div:hover {
+    background: darkgoldenrod;
+    transform: translateY(-10px);
 }
-/*portfolio*
-#portfolio{
-    padding: 50px 0;
-}
-.work-list{
-    display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-gap: 40px;
-    margin-top: 50px;
-}
-.work{
-    border-radius: 10px;
-    position: relative;
-    overflow: hidden;
-}
-.work img{
-    width: 100%;
-    border-radius: 10px;
-    display:block;
-    transition: transform 0.5s;
-}
-.layer{
-    width: 100%;
-    height: 0;
-    background: linear-gradient(rgba(0,0,0,0.6), #ff004f);
-    border-radius: 10px;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 0 40px;
-    text-align: center;
-    font-size: 14px;
-    transition: height 0.5s;
-}
-.layer h3{
-    font-weight: 500;
-    margin-bottom: 20px;
-    
-}
-.layer a{
-    margin-top: 20px;
-    color: #ff004f;
-    text-decoration: none;
-    font-size: 18px;
-    line-height: 60px;
-    background: #fff;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    text-align: center;
-}
-.work:hover img{
-    transform: scale(1.1);
-}
-.work:hover .layer{
-    height: 100%;
-}
-.btn:hover{
-    background: #ff004f;
-}/
-/*contact*/
-.contact-left{
+
+/* contact */
+.contact-left {
     flex-basis: 35%;
     padding: 50px;
 }
-.contact-right{
+
+.contact-right {
     flex-basis: 60%;
     padding: 50px;
 }
-.contact-left p{
+
+.contact-left p {
     margin-top: 30px;
 }
-.contact-left p i{
-    color:darkgoldenrod;
+
+.contact-left p i {
+    color: darkgoldenrod;
     margin-right: 50px;
     font-size: 25px;
 }
+
 .social-icons {
     margin-top: 60px;
     display: flex;
-  }
-  
-  /* Style each individual social media link */
-  .social-icons a {
+}
+
+/* Style each individual social media link */
+.social-icons a {
     padding: 30px;
     display: block;
     width: 32px;
     height: 32px;
-    margin: 20px; /* Adjust spacing between icons as needed */
+    margin: 20px;
+    /* Adjust spacing between icons as needed */
     background-repeat: no-repeat;
-    background-size: contain; /* Scale icons to fit within the container */
+    background-size: contain;
+    /* Scale icons to fit within the container */
     transition: transform 0.5s;
-  }
-  
-  /* Apply the background images for each social media link */
-  .social-icons a[href*="instagram"] {
+}
+
+/* Apply the background images for each social media link */
+.social-icons a[href*="instagram"] {
     margin-top: 20px;
-    
     background-image: url('https://api.iconify.design/skill-icons/instagram.svg');
-  }
-  
-  .social-icons a[href*="tiktok"] {
+}
+
+.social-icons a[href*="tiktok"] {
     margin-top: 20px;
     background-image: url('https://api.iconify.design/logos/tiktok-icon.svg');
-  }
-  
-  .social-icons a[href*="youtube"] {
+}
+
+.social-icons a[href*="youtube"] {
     margin-top: 30px;
     background-image: url('https://api.iconify.design/logos/youtube-icon.svg');
-  }
-  
-  .social-icons a[href*="linkedin"] {
+}
+
+.social-icons a[href*="linkedin"] {
     margin-top: 20px;
     background-image: url('https://api.iconify.design/logos/linkedin-icon.svg');
-  }
+}
 
-  .social-icons a[href*="twitter"] {
+.social-icons a[href*="twitter"] {
     margin-top: 20px;
     background-image: url('https://api.iconify.design/skill-icons/twitter.svg');
-  }
-  
-  .social-icons a:hover {
+}
+
+.social-icons a:hover {
     color: darkgoldenrod;
     transform: translateY(-5px);
 }
 
-.btn.btn2{
+.btn.btn2 {
     display: inline-block;
     background: #262626;
     border: 0;
@@ -316,34 +301,36 @@ transform: translateY(-10px);
     font-size: 18px;
     font-weight: 500;
     border-radius: 12px;
+}
 
-}
-.contact-right form{
+.contact-right form {
     width: 100%;
-    margin-top: 120px;
+    margin-top: 30px; /* Adjusted margin for better spacing */
 }
-form input, form textarea{
+
+form input,
+form textarea {
     width: 100%;
     border: 0;
     outline: none;
     background: #262626;
     padding: 20px 0;
-    margin: 50px 0;
+    margin: 20px 0;
     color: #fff;
     font-size: 18px;
     font-weight: 500;
     border-radius: 6px;
 }
-form .btn2{
+
+form .btn2 {
     padding: 22px 60px;
     font-size: 18px;
     font-weight: 500;
     margin-top: 20px;
-    margin-left: 440px;
     cursor: pointer;
-    
 }
-.form .btn2::after{
+
+.form .btn2::after {
     content: "";
     width: 0;
     height: 3px;
@@ -359,12 +346,10 @@ form .btn2{
     transform: translateY(-10px);
 }
 
-
-
-.copyright{
+.copyright {
     width: 100%;
     text-align: center;
-    padding: 25px 0;
+    padding: 10px 0;
     background: #262626;
     font-weight: 300;
     margin-top: 20px;
