@@ -5,6 +5,9 @@
     box-sizing: border-box;
 }
 
+html{
+    scroll-behavior: smooth;
+}
 .hero {
     width: 100%;
     height: auto;
@@ -162,6 +165,7 @@ nav ul li a:hover {
     padding-top: 10px;
     padding-left: 160px;
     text-align: center;
+    
 }
 
 .tab-contents.active-tab {
@@ -175,10 +179,47 @@ nav ul li a:hover {
     color: #333;
 }
 
+.content-social-icons{
+    padding-top: 20px;
+    padding-left: 85px;
+    display: flex;
+}
+
+.content-social-icons a {
+    background-color: goldenrod;
+    padding: 30px;
+    display: block;
+    width: 32px;
+    height: 32px;
+    margin: 20px;
+    /* Adjust spacing between icons as needed */
+    background-repeat: no-repeat;
+    background-size: contain;
+    /* Scale icons to fit within the container */
+    transition: transform 0.5s;
+}
+
+.content-social-icons a[href*="linkedin"] {
+    margin-top: 20px;
+    background-image: url('https://api.iconify.design/pajamas/linkedin.svg');
+}
+
+.content-social-icons a[href*="github"] {
+    margin-top: 20px;
+    background-image: url('https://api.iconify.design/pajamas/github.svg');
+}
+
 /* services */
 #services {
     padding: 50px;
     margin-top: 60px; /* Adjusted margin for better spacing */
+}
+
+.product-subtitle{
+    padding-left: 325px;
+    font-size: 60px;
+    font-weight: 600;
+    color: #fff;
 }
 
 .services-list {
@@ -192,7 +233,7 @@ nav ul li a:hover {
     background: #262626;
     padding: 50px;
     font-size: 13px;
-    font-weight: 300;
+    font-weight: bold;
     border-radius: 10px;
     transition: background 0.5s, transform 0.5s;
 }
@@ -203,8 +244,8 @@ nav ul li a:hover {
 }
 
 .services-list div h2 {
-    font-size: 30px;
-    font-weight: 500;
+    font-size: 28px;
+    font-weight: bold;
     margin-bottom: 14px;
 }
 
@@ -223,8 +264,14 @@ nav ul li a:hover {
 
 /* contact */
 .contact-left {
-    flex-basis: 35%;
-    padding: 50px;
+    flex-basis: 100%;
+}
+
+.contact-subtitle{
+    padding-left: 44px;
+    font-size: 60px;
+    font-weight: 600;
+    color: #fff;
 }
 
 .contact-right {
@@ -308,42 +355,52 @@ nav ul li a:hover {
     margin-top: 30px; /* Adjusted margin for better spacing */
 }
 
-form input,
-form textarea {
+#contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+input,
+textarea {
     width: 100%;
+    padding: 12px;
+    border: 1px solid #555;
+    border-radius: 6px;
+    background: #262626;
+    color: #fff;
+    font-size: 16px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+.btn2 {
+    display: inline-block;
+    background: #262626;
     border: 0;
     outline: none;
-    background: #262626;
-    padding: 20px 0;
-    margin: 20px 0;
     color: #fff;
     font-size: 18px;
     font-weight: 500;
+    padding: 15px 30px;
     border-radius: 6px;
-}
-
-form .btn2 {
-    padding: 22px 60px;
-    font-size: 18px;
-    font-weight: 500;
-    margin-top: 20px;
     cursor: pointer;
+    transition: background 0.3s;
 }
 
-.form .btn2::after {
-    content: "";
-    width: 0;
-    height: 3px;
+.btn2:hover {
     background: darkgoldenrod;
-    position: absolute;
-    left: 0;
-    bottom: -6px;
-    transition: 0.5s;
-}
-
-.form .btn2:hover {
-    background: darkgoldenrod;
-    transform: translateY(-10px);
 }
 
 .copyright {

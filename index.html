@@ -30,9 +30,9 @@
             <img src="pics/tgpwhiteclear.png" alt="TGP Logo" class="logo">
         </a>
         <ul class="navbar-nav ml-auto">
-            <li><a href="#">About</a></li>
-            <li><a href="#">Products</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Products</a></li>
+            <li><a href="#contact">Contact</a></li>
             <li><a href="#">Shop</a></li>   
         </ul>
     </nav>
@@ -73,12 +73,19 @@
                 <div class="tab-contents" id="arjun">
                     <ul>
                         <li><span>My name is Arjun Thiruchchelvarajah and I'm a third-year SWE student at Toronto Metropolitan University 
-                            with deep interests in software, AI, hardware, and problem solving.<br><br> Check out my LinkedIn and GitHub below</span></li>
+                            with deep interests in software, AI, hardware, and problem solving.<br><br> 
+                        <div class="content-social-icons">
+                            <a href="https://ca.linkedin.com/arjunthiru" target="blank"></a>
+                            <a href="https://github.com/arjunthiru2" target="blank"></a>
+
+                        </div>
+
+                        </span></li>
                     </ul>
                 </div>
                 <div class="tab-contents" id="chaarm">
                     <ul>
-                        <li><span>Coming Soon</span><br> Test</li>
+                        <li><span>Coming Soon</span><br></li>
                     </ul>
                 </div>               
             </div>
@@ -88,47 +95,55 @@
 
 <!-- services -->
 <div id="services" class="container mt-5">
-        <h1 class="subtitle">Our Products</h1>
-        <div class="col-md-4">
-            <div>
-                <h2>Content</h2>
-                <p>Description</p>
-                <a href="#">Learn more</a>
-            </div>
-            <div class="col-md-4">
-                <h2>Video Podcasts</h2>
-                <p>Description</p>
-                <a href="#">Learn more</a>
-            </div>
-            <div class="col-md-4">
-                <h2>Audio Podcasts</h2>
-                <p>Description</p>
-                <a href="#">Learn more</a>
-            </div>
+    <h1 class="product-subtitle">Our Products</h1>
+    <div class="services-list">
+        <div>
+            <h2>Content</h2>
+            <p>Unlock your creative potential with our content creation offerings. From compelling articles and engaging blog posts, to captivating short form videos, we specialize in crafting content that resonates. Our creative team is dedicated to bringing ideas to life, ensuring that every piece of content is not just informative but also a work of art. Join us in exploring the endless possibilities of content creation that leaves a lasting impact.</p>
+            <a href="https://www.tiktok.com/@thegraduatesproject">Learn more</a>
         </div>
-    </div> 
+        <div>
+            <h2>Video Podcasts</h2>
+            <p>Dive into our immersive video podcasts where we bring topics to life through engaging visuals and insightful discussions. Explore a dynamic range of subjects, from inspiring stories to thought-provoking interviews. Join us on a journey where knowledge meets entertainment, and every episode is a visual feast. </p>
+            <a href="https://www.youtube.com/channel/UCtQ_DLyjJuh7cayvgzd6jsQ">Learn more</a>
+        </div>
+        <div>
+            <h2>Audio Podcasts</h2>
+            <p>Immerse yourself in the power of audio with our thoughtfully crafted podcasts. Tune in to enlightening conversations, fascinating stories, and in-depth discussions on various subjects. Our audio podcasts provide a convenient way to absorb valuable content while on the go. Whether you're commuting, exercising, or relaxing at home, let our voices guide you through a world of ideas and inspiration.</p>
+            <a href="#">Learn more</a>
+        </div>
+    </div>
+</div>
 <!--contact-->
 <div id="contact" class="container mt-5">
         <div class="row">
             <div class="col-md-6 contact-left">
-                <h1 class="subtitle">Contact Us</h1>
+                <h1 class="contact-subtitle">Contact Us</h1>
                 <div class="social-icons">
                     <a href="https://www.instagram.com/thegraduatesproject/" target="blank"></a>
-                    <a href="https://www.tiktok.com/@thegraduatesproject" target="blank"></a>
                     <a href="https://www.youtube.com/channel/UCtQ_DLyjJuh7cayvgzd6jsQ" target="blank"></a>
                     <a href="https://ca.linkedin.com/company/the-graduates-project" target="blank"></a>
                     <a href="https://twitter.com/tgprojectmedia" target="blank"></a>
                 </div>
             </div>
             <div class="col-md-6 contact-right">
-                <form>
-                    <input type="text" name="name" placeholder=" Name" required>
-                    <input type="email" name="email" placeholder=" Email" required>
-                    <textarea name="Message" rows="6" placeholder=" Message"></textarea>
+                <form name="submit-to-google-sheet" id="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea id="message" rows="6" placeholder="Your Message" required></textarea>
+                    </div>
                     <button type="submit" class="btn btn2">Submit</button>
                 </form>
             </div>
-        </div>
+        </div>  
     </div>
     <!-- Copyright-->
     <div class="container mt-5">
