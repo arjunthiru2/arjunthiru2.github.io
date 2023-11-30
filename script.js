@@ -1,21 +1,23 @@
-// script.js
-$(document).ready(function() {
-    // Your script code here
-    console.log("Script loaded!");
-});
-
-
-
-var tablinks = document.getElementsByClassName("tab-links");
-var tabcontents = document.getElementsByClassName("tab-contents");
-
-function opentab(tabname) {
-    for (tablink of tablinks) {
-        tablink.classList.remove("active-link");
+function opentab(tabName) {
+    var i;
+    var x = document.getElementsByClassName("tab-contents");
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
     }
-    for (tabcontent of tabcontents) {
-        tabcontent.classList.remove("active-tab");  // Corrected variable name
+    var links = document.getElementsByClassName("tab-links");
+    for (i = 0; i < links.length; i++) {
+        links[i].classList.remove("active-link");
     }
+    document.getElementById(tabName).style.display = "block";
     event.currentTarget.classList.add("active-link");
-    document.getElementById(tabname).classList.add("active-tab");
 }
+
+const scriptURL = 'https://script.google.com/macros/s/AKfycbzdqi2zcrV1pz6tBn1qMnSjmxpg8L9K2Ot4mhuhmDu5DQJAzkA4MwCSVRkytOTe8mQN/exec';
+  const form = document.forms['submit-to-google-sheet'];
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error', error.message))
+  })
