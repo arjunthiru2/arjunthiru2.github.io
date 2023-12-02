@@ -392,7 +392,7 @@ textarea {
     outline: none;
     color: #fff;
     font-size: 18px;
-    font-weight: 500;
+    font-weight: bold;
     padding: 15px 30px;
     border-radius: 6px;
     cursor: pointer;
@@ -403,11 +403,29 @@ textarea {
     background: darkgoldenrod;
 }
 
+#msg{
+    color: rgb(3, 252, 3);
+    margin-left: 10px;
+    padding-left: 60px;
+    font-weight: bold;
+    font-size: 18px;
+    display: inline-block;
+}
+
 .copyright {
     width: 100%;
     text-align: center;
-    padding: 10px 0;
+    padding-top: 15px;
     background: #262626;
-    font-weight: 300;
+    font-weight: bold;
     margin-top: 20px;
+}
+/*--- CSS FOR DIFFERENT SCREEN SIZES ---*/
+@media only screen and (max-width: 600px) {
+    .hero {
+       
+    }}
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    /* Styles for medium screens (e.g., tablets) */
 }
