@@ -22,7 +22,7 @@ const Projects = () => {
       description: 'An AI-powered voice assistant that helps sales teams manage customer interactions and automate routine tasks.',
       tech: ['Python', 'LiveKit', 'API', 'Silero'],
       image: '/pics/Screenshot 2025-04-19 162843.png',
-      link: '#',
+      link: 'https://vapi.ai/?demo=true&shareKey=317472dc-cdf3-44c8-b6e2-3e3d0fc4c46c&assistantId=ec84057a-b625-4f07-8a49-6cc5dcd654aa',
       building: true,
     },
     {
