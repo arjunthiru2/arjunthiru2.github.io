@@ -3,31 +3,41 @@ import { motion } from 'framer-motion';
 const Projects = () => {
   const projects = [
     {
-      title: 'AI-Powered Appreciation Jar',
-      description: 'A sentiment analysis platform that helps teams recognize and celebrate achievements using natural language processing.',
+      title: 'AI Appreciation Jar',
+      description: 'Hackathon Project: A sentiment analysis platform that helps teams recognize and celebrate achievements using natural language processing.',
       tech: ['React', 'Python', 'TensorFlow', 'NLP'],
-      image: '/project1.jpg', // You'll need to add these images
-      link: '#',
+      image: '/pics/Screenshot 2025-03-02 112004.png', // You'll need to add these images
+      link: 'https://youtu.be/Og1Lzpo1Xzg',
+      building: true,
     },
-    {
-      title: 'EdTech Platform',
-      description: 'An interactive learning platform that adapts to student progress using machine learning algorithms.',
-      tech: ['Next.js', 'TypeScript', 'MongoDB', 'TensorFlow'],
-      image: '/project2.jpg',
-      link: '#',
-    },
+    // {
+    //   title: 'EdTech Platform',
+    //   description: 'An interactive learning platform that adapts to student progress using machine learning algorithms.',
+    //   tech: ['Next.js', 'TypeScript', 'MongoDB', 'TensorFlow'],
+    //   image: '/project2.jpg',
+    //   link: '#',
+    // },
     {
       title: 'CRM Voice Agent',
       description: 'An AI-powered voice assistant that helps sales teams manage customer interactions and automate routine tasks.',
-      tech: ['Python', 'FastAPI', 'WebSocket', 'Speech Recognition'],
-      image: '/project3.jpg',
+      tech: ['Python', 'LiveKit', 'API', 'Silero'],
+      image: '/pics/Screenshot 2025-04-19 162843.png',
       link: '#',
+      building: true,
     },
     {
-      title: 'Microservices Web App',
-      description: 'A scalable web application built with microservices architecture, focusing on performance and reliability.',
-      tech: ['Node.js', 'Docker', 'Kubernetes', 'GraphQL'],
-      image: '/project4.jpg',
+      title: 'ProForum',
+      description: 'A web application built with microservices architecture.',
+      tech: ['Apache Netbeans', 'Docker', 'Kubernetes', 'MySQL'],
+      image: '/pics/proforum_landingpage.png',
+      link: 'https://www.youtube.com/playlist?list=PLhzsWf3BPFS2ZOg7Oq47hobz1j8VlsHHy',
+    },
+
+    {
+      title: 'TGP',
+      description: '05/11/2025.',
+      tech: ['Next.js', 'TypeScript', 'MongoDB', 'TensorFlow'],
+      image: '/pics/tgpwhite.png',
       link: '#',
     },
   ];
@@ -65,12 +75,22 @@ const Projects = () => {
                 </div>
                 
                 <div className="p-6">
-                  <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-3">
+                    
+                    <div className="flex items-center space-x-2 mb-3">
+                    {/* Display the Building tag if the project is still being worked on */}
+                    {project.building && (
+                    <span className="px-3 py-1 bg-yellow-300 text-black rounded-full text-sm font-semibold">
+                        🚧 Building
+                    </span>
+                    )}
+                    <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">
                     {project.title}
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-300 mb-4">
+                    </h3>
+                </div>
+
+                <p className="text-gray-600 dark:text-gray-300 mb-4">
                     {project.description}
-                  </p>
+                </p>
                   
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.tech.map((tech) => (
@@ -86,6 +106,8 @@ const Projects = () => {
                   <a
                     href={project.link}
                     className="inline-flex items-center text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300"
+                    target="_blank"  // This makes the link open in a new tab
+                    rel="noopener noreferrer"  // This is recommended for security reasons
                   >
                     View Project
                     <svg

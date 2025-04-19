@@ -19,7 +19,7 @@ const Navbar = () => {
     { name: 'About', href: '#about' },
     { name: 'Projects', href: '#projects' },
     { name: 'Resume', href: '#resume' },
-    { name: 'Blog', href: '#blog' },
+    //{ name: 'Blog', href: '#blog' },
     { name: 'Contact', href: '#contact' },
   ];
 
@@ -39,7 +39,7 @@ const Navbar = () => {
             transition={{ duration: 0.5 }}
           >
             <Link to="/" className="text-2xl font-bold text-primary-600">
-              Your Name
+              Arjun
             </Link>
           </motion.div>
 

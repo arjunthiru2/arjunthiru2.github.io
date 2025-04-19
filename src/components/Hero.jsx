@@ -1,19 +1,22 @@
 import { motion } from 'framer-motion';
+import profileImage from '../assets/linkedin profile.jpg';
 
 const Hero = () => {
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
+      <div className="container px-4">
+        <div className="flex flex-col-reverse lg:flex-row items-center gap-12">
+          {/* Text content */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
+            className="text-center lg:text-left"
           >
             <h1 className="text-4xl sm:text-6xl font-bold text-gray-900 dark:text-white mb-6">
-              Hi, I'm <span className="text-primary-600">Your Name</span>
+              Hi, I'm <span className="text-primary-600">Arjun Thiruchchelvarajah</span>
             </h1>
-            <p className="text-xl sm:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
+            <p className="text-xl sm:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl">
               I build AI-driven products for learning and growth. A 4th-year Software Engineering student
               passionate about creating impactful solutions at the intersection of technology and education.
             </p>
@@ -21,7 +24,7 @@ const Hero = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
-              className="flex flex-col sm:flex-row items-center justify-center gap-4"
+              className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4"
             >
               <a
                 href="#projects"
@@ -38,41 +41,55 @@ const Hero = () => {
             </motion.div>
           </motion.div>
 
-          {/* Scroll Indicator */}
+          {/* Profile Picture */}
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1, duration: 1 }}
-            className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-          >
-            <div className="flex flex-col items-center">
-              <span className="text-sm text-gray-500 dark:text-gray-400 mb-2">Scroll Down</span>
-              <motion.div
-                animate={{
-                  y: [0, 10, 0],
-                }}
-                transition={{
-                  duration: 1.5,
-                  repeat: Infinity,
-                  repeatType: "reverse",
-                }}
-              >
-                <svg
-                  className="w-6 h-6 text-gray-500 dark:text-gray-400"
-                  fill="none"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-                </svg>
-              </motion.div>
-            </div>
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            className="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden shadow-lg border-4 border-primary-600"
+            >
+            <img
+              src={profileImage}
+              alt="Arjun Thiruchchelvarajah"
+              className="object-cover w-full h-full"
+            />
           </motion.div>
         </div>
       </div>
+
+      {/* Scroll Indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1, duration: 1 }}
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+      >
+        <div className="flex flex-col items-center">
+          <span className="text-sm text-gray-500 dark:text-gray-400 mb-2">Scroll Down</span>
+          <motion.div
+            animate={{
+              y: [0, 10, 0],
+            }}
+            transition={{
+              duration: 1.5,
+              repeat: Infinity,
+              repeatType: 'reverse',
+            }}
+          >
+            <svg
+              className="w-6 h-6 text-gray-500 dark:text-gray-400"
+              fill="none"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+          </motion.div>
+        </div>
+      </motion.div>
 
       {/* Background Decoration */}
       <div className="absolute inset-0 -z-10">
@@ -84,4 +101,4 @@ const Hero = () => {
   );
 };
 
-export default Hero; 
+export default Hero;
