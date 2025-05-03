@@ -17,14 +17,14 @@ const Projects = () => {
     //   image: '/project2.jpg',
     //   link: '#',
     // },
-    {
-      title: 'CRM Voice Agent',
-      description: 'An AI-powered voice assistant that helps sales teams manage customer interactions and automate routine tasks.',
-      tech: ['Python', 'LiveKit', 'API', 'Silero'],
-      image: '/pics/Screenshot 2025-04-19 162843.png',
-      link: 'https://vapi.ai/?demo=true&shareKey=317472dc-cdf3-44c8-b6e2-3e3d0fc4c46c&assistantId=ec84057a-b625-4f07-8a49-6cc5dcd654aa',
-      building: true,
-    },
+    // {
+    //   title: 'CRM Voice Agent',
+    //   description: 'An AI-powered voice assistant that helps sales teams manage customer interactions and automate routine tasks.',
+    //   tech: ['Python', 'LiveKit', 'API', 'Silero'],
+    //   image: '/pics/Screenshot 2025-04-19 162843.png',
+    //   link: 'https://vapi.ai/?demo=true&shareKey=317472dc-cdf3-44c8-b6e2-3e3d0fc4c46c&assistantId=ec84057a-b625-4f07-8a49-6cc5dcd654aa',
+    //   building: true,
+    // },
     {
       title: 'ProForum',
       description: 'A web application built with microservices architecture.',
@@ -33,13 +33,13 @@ const Projects = () => {
       link: 'https://www.youtube.com/playlist?list=PLhzsWf3BPFS2ZOg7Oq47hobz1j8VlsHHy',
     },
 
-    {
-      title: 'TGP',
-      description: '05/11/2025.',
-      tech: ['Next.js', 'TypeScript', 'MongoDB', 'TensorFlow'],
-      image: '/pics/tgpwhite.png',
-      link: '#',
-    },
+    // {
+    //   title: 'TGP',
+    //   description: '05/11/2025.',
+    //   tech: ['Next.js', 'TypeScript', 'MongoDB', 'TensorFlow'],
+    //   image: '/pics/tgpwhite.png',
+    //   link: '#',
+    // },
   ];
 
   return (
