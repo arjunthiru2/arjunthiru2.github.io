@@ -1,54 +1,72 @@
 import { motion } from 'framer-motion';
-import MediaCarousel from './MediaCarousel';
+
+const pillars = [
+  {
+    title: 'Build products with narrative',
+    body: 'I care about more than shipping code. I want the product, positioning, and user story to feel coherent.',
+  },
+  {
+    title: 'Work across AI and product',
+    body: 'My projects usually sit between engineering, experimentation, and figuring out what should exist in the first place.',
+  },
+  {
+    title: 'Learn in public through experience',
+    body: 'Hackathons, conversations, training, and events all feed into how I build. The site should reflect that, not hide it.',
+  },
+];
+
+const interests = [
+  'AI product development',
+  'Education and growth',
+  'Founder-style execution',
+  'Basketball, training, and chess',
+  'Nature, events, and reflective writing',
+];
 
 const About = () => {
-    const mediaItems = [
-        { type: 'image', src: '/pics/Screenshot 2024-12-14 090638.png', alt: 'Hackathon Solo' },
-        { type: 'image', src: '/pics/ChessDay(2)97.jpg', alt: 'Chess' },
-        {
-            type: 'tweet',
-            tweetId: '1913678850011131954',
-            alt: 'Twitter Video',
-          },
-        { type: 'image', src: '/pics/muaythai.jpg', alt: 'Muay Thai' },
-        
-      ];
-      
   return (
-    <section id="about" className="section bg-white dark:bg-gray-900 relative overflow-hidden">
-      <div className="container relative max-w-6xl mx-auto">
-
+    <section id="about" className="section">
+      <div className="container">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="grid md:grid-cols-2 gap-10"
+          transition={{ duration: 0.7 }}
+          className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]"
         >
-          {/* Left side: description and optional video */}
-          <div className="flex flex-col justify-start space-y-6">
-            <h2 className="heading">
-              About <span className="text-primary-600">Me</span>
-            </h2>
+          <div className="premium-panel">
+            <span className="eyebrow">What I do</span>
+            <h2 className="heading mt-4">A site that feels more like a founder portfolio than a student template.</h2>
+            <p className="section-copy mt-5">
+              I&apos;m a fourth-year software engineering student building around AI, product strategy, and education. The
+              stronger version of this portfolio is not a long list of random work. It&apos;s a clear story: what I&apos;m
+              building now, what I&apos;ve learned from previous projects, and what kind of problems I want to own.
+            </p>
 
-            <div className="prose prose-lg dark:prose-invert">
-              <p className="text-gray-600 dark:text-gray-300">
-                As a 4th-year Software Engineering student, I've developed a unique perspective
-                that combines technical expertise with product thinking. 
-              </p>
-              <p className="text-gray-600 dark:text-gray-300">
-                My journey REALLY began when I decided to pursue my passion for making a difference, which led me
-                to explore the intersection of AI and education. I am currently building TGP. More information soon.
-              </p>
-              <p className="text-gray-600 dark:text-gray-300">
-                Outside of that, I'd have to say my BIG3 interests are basketball, training, and chess. I also love nature and the outdoors (mostly during the summer)
-              </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              {interests.map((interest) => (
+                <span key={interest} className="tag tag-muted">
+                  {interest}
+                </span>
+              ))}
             </div>
           </div>
 
-          {/* Right side: Media Grid */}
-          <div className="relative">
-            <MediaCarousel mediaItems={mediaItems} />
+          <div className="grid gap-4 sm:grid-cols-3">
+            {pillars.map((pillar, index) => (
+              <motion.article
+                key={pillar.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="premium-panel premium-panel-dark"
+              >
+                <p className="text-sm uppercase tracking-[0.28em] text-amber-200/80">0{index + 1}</p>
+                <h3 className="mt-4 text-2xl font-semibold text-white">{pillar.title}</h3>
+                <p className="mt-4 text-sm leading-7 text-slate-300">{pillar.body}</p>
+              </motion.article>
+            ))}
           </div>
         </motion.div>
       </div>

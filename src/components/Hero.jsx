@@ -1,101 +1,83 @@
 import { motion } from 'framer-motion';
 import profileImage from '../assets/linkedin profile.jpg';
 
+const heroStats = [
+  { label: 'Focus', value: 'AI products, product thinking, and education' },
+  { label: 'Current build', value: 'TGP as the flagship company-building story' },
+  { label: 'Based in', value: 'Toronto, building with a founder-operator mindset' },
+];
+
 const Hero = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
-      <div className="container px-4">
-        <div className="flex flex-col-reverse lg:flex-row items-center gap-12">
-          {/* Text content */}
+    <section className="hero-shell relative overflow-hidden pt-28 pb-16 sm:pt-32 sm:pb-24">
+      <div className="hero-orb hero-orb-left" />
+      <div className="hero-orb hero-orb-right" />
+
+      <div className="container relative">
+        <div className="grid items-center gap-10 lg:grid-cols-[1.15fr_0.85fr]">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center lg:text-left"
+            className="space-y-8"
           >
-            <h1 className="text-4xl sm:text-6xl font-bold text-gray-900 dark:text-white mb-6">
-              Hi, I'm <span className="text-primary-600">Arjun Thiruchchelvarajah</span>
-            </h1>
-            <p className="text-xl sm:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl">
-              I build AI-driven products for learning and growth. A 4th-year Software Engineering student
-              passionate about creating impactful solutions at the intersection of technology and education.
-            </p>
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.5 }}
-              className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4"
-            >
-              <a
-                href="#projects"
-                className="px-8 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors"
-              >
-                View My Work
+            <div className="space-y-5">
+              <span className="eyebrow">Software Engineer • Builder • Product-minded operator</span>
+              <h1 className="hero-title max-w-4xl">
+                Building thoughtful AI products, with <span className="text-highlight">TGP</span> at the center.
+              </h1>
+              <p className="hero-copy max-w-3xl">
+                I&apos;m Arjun Thiruchchelvarajah, a software engineering student and builder focused on creating
+                ambitious products with real human value. This site now leads with TGP, then shows the rest of the work,
+                writing, and field notes around how I think, ship, and learn.
+              </p>
+            </div>
+
+            <div className="flex flex-col gap-4 sm:flex-row">
+              <a href="#projects" className="button-primary">
+                See TGP First
               </a>
-              <a
-                href="#contact"
-                className="px-8 py-3 border-2 border-primary-600 text-primary-600 rounded-lg hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-colors"
-              >
-                Let's Connect
+              <a href="#journal" className="button-secondary">
+                Read the journal
               </a>
-            </motion.div>
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-3">
+              {heroStats.map((stat) => (
+                <div key={stat.label} className="glass-panel rounded-3xl p-5">
+                  <p className="text-xs uppercase tracking-[0.24em] text-slate-500">{stat.label}</p>
+                  <p className="mt-3 text-sm leading-6 text-slate-700">{stat.value}</p>
+                </div>
+              ))}
+            </div>
           </motion.div>
 
-          {/* Profile Picture */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
+            initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
-            className="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden shadow-lg border-4 border-primary-600"
-            >
-            <img
-              src={profileImage}
-              alt="Arjun Thiruchchelvarajah"
-              className="object-cover w-full h-full"
-            />
-          </motion.div>
-        </div>
-      </div>
-
-      {/* Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1, duration: 1 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-      >
-        <div className="flex flex-col items-center">
-          <span className="text-sm text-gray-500 dark:text-gray-400 mb-2">Scroll Down</span>
-          <motion.div
-            animate={{
-              y: [0, 10, 0],
-            }}
-            transition={{
-              duration: 1.5,
-              repeat: Infinity,
-              repeatType: 'reverse',
-            }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            className="relative"
           >
-            <svg
-              className="w-6 h-6 text-gray-500 dark:text-gray-400"
-              fill="none"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-            </svg>
+            <div className="hero-portrait-card">
+              <div className="hero-portrait-copy">
+                <p className="text-xs uppercase tracking-[0.3em] text-amber-200/80">Now building</p>
+                <h2 className="mt-4 text-3xl font-semibold text-white sm:text-4xl">TGP</h2>
+                <p className="mt-4 max-w-md text-sm leading-7 text-slate-300 sm:text-base">
+                  The company and product I want people to remember first. The homepage now treats it as the core
+                  narrative, not just another portfolio tile.
+                </p>
+              </div>
+
+              <div className="hero-portrait-frame">
+                <img
+                  src={profileImage}
+                  alt="Arjun Thiruchchelvarajah"
+                  className="h-full w-full object-cover"
+                />
+              </div>
+            </div>
           </motion.div>
         </div>
-      </motion.div>
-
-      {/* Background Decoration */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-primary-100 dark:bg-primary-900/20 rounded-full filter blur-3xl opacity-20 animate-blob"></div>
-        <div className="absolute top-0 right-0 w-96 h-96 bg-primary-200 dark:bg-primary-800/20 rounded-full filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
-        <div className="absolute bottom-0 left-1/2 w-96 h-96 bg-primary-300 dark:bg-primary-700/20 rounded-full filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
       </div>
     </section>
   );
